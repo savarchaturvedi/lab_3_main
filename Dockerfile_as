@@ -5,8 +5,8 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
-RUN groupadd -g 799 asg8830 && \
-    useradd -r -u 999 -g asg8830 asg8830
+RUN groupadd -g 799 sc10773 && \
+    useradd -r -u 999 -g sc10773 sc10773
 
 # Set up a working folder and install the pre-reqs
 WORKDIR /app
@@ -17,6 +17,6 @@ RUN pip install requests
 
 USER root
 
-COPY --chown=asg8830:asg8830 . .
+COPY --chown=sc10773:sc10773 . .
 
 CMD [ "python", "./AS.py" ]
